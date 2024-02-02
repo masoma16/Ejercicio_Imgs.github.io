@@ -1,12 +1,15 @@
 <!--
 05-06 Imágenes
 En esta práctica debes ingresar varias imágenes en una página web y comparar el tiempo de carga hasta minimizarlo por completo.
-Utiliza sitios libres de derechos para descargar 12 imágenes con la resolución más alta posible. Incluye formatos webp, GIF y PNG. 
+Utiliza sitios libres de derechos para descargar 12 imágenes con la resolución más alta posible. Incluye formatos JPG, GIF y PNG. 
 Crear una página web para organizar las imágenes usando el modelo flexbox, de modo que quepan dos imágenes por ancho.Obtendrás 6 filas de dos imágenes por fila. NO CAMBIAR EL TAMAÑO ORIGINAL.
 Agregue etiquetas ALT a todas las imágenes. Respeta el copyleft utilizando las etiquetas apropiadas para dar el crédito necesario al autor de la imagen.
 Crear un proyecto en Github y publicar la página. Siga el siguiente manual:https://docs.github.com/es/pages/getting-started-with-github-pages/creating-a-github-pages-site
 Usar herramientas de Google (https://pagespeed.web.dev/) para comprobar el tiempo de carga de la página, crear una tabla e indicar el tamaño medio, formato de imagen utilizado y tiempo de carga.Agregue la tabla a la página web.
-COPIAR LA PÁGINA WEB EN OTRA.Optimiza el tamaño de las imágenes. Utiliza etiquetas PICTURE, SRCSET y MEDIA para incluir distintos tamaños y formatos de imagen.  Realiza nuevamente la prueba de tiempo de carga y actualiza los datos de la tabla.
+
+CAPTURA EL PRIMER PANTALLAZO
+
+COPIAR LA PÁGINA WEB EN OTRA.Optimiza el tamaño Y EL FORMATO (INVESTIGA SOBRE NUEVOS FORMATOS) de las imágenes. Utiliza etiquetas PICTURE, SRCSET y MEDIA para incluir distintos tamaños y formatos de imagen.  Realiza nuevamente la prueba de tiempo de carga y actualiza los datos de la tabla.
 COPIA LA ÚLTIMA PÁGINA WEB EN OTRA.Ahora seguiremos los consejos de la página de Google. en cuanto a formatos.Puedes utilizar la herramienta gráfica que quieras para configurarlos, a modo de ejemplo aquí tienes varias: https://www.dosmedia.com/tratamiento-de-imagenes-para-tu-pagina-web/
 Aplicación de Estilos CSS:
 Usar object-fit y object-position para asegurar que las imágenes se muestren correctamente en su contenedor.
@@ -19,8 +22,9 @@ Implementar clip-path en al menos una imagen para darle una forma única.
 Añadir border-image a alguna imagen para mostrar cómo se puede usar una imagen como borde.
 Responsividad:
 Asegurarse de que la galería se vea bien en diferentes tamaños de pantalla, incluyendo teléfonos móviles y tablets.
-Interactividad: 
-Agregar interactividad con JavaScript, como cambiar la opacidad o el filtro al pasar el mouse sobre las imágenes
+Interactividad:
+Agregar interactividad con JavaScript, cómo cambiar la opacidad o el filtro al pasar el mouse sobre las imágenes.
+ENTREGA:  una sóla imagen con DOS capturas de pantalla de Google Insight, una antes de optimizar y otra después   (junta las dos en una sola) y un  sólo  documento  HTML con el código final.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -45,113 +49,134 @@ Agregar interactividad con JavaScript, como cambiar la opacidad o el filtro al p
             text-align: center;
             border: 1px solid black;
         }
+
+        .contenedor div figure picture video {
+            object-fit: fill;
+            object-position: 5px;
+            width: 600px;
+            background-color: lightgreen;
+        }
+
+        .contenedor div figure picture img {
+            object-fit: fill;
+            object-position: 10px;
+            width: 600px;
+            background-color: lightgreen;
+        }
+
+        img:hover {
+            filter: hue-rotate(45deg);
+            opacity: 75%;
+            clip-path: polygon(75% 10px, 80% 50%, 75% 100%, 10px 50%);
+            border-image: repeating-linear-gradient(30deg, #9f220c, #de91e5, #0c8e9f 20px) 60;
+        }
     </style>
 </head>
 <body>
     <div class="contenedor">
-        <div>
+        <div class="img-video">
             <figure>
                 <picture>
-                    <source srcset="" type="img/mp4">
+                    <source srcset="" type="img/mp4" sizes="90vw">
                     <video src="./img/gif1.mp4" autoplay></video>
                 </picture>
                 <figcaption>Imagen sacada de Freepik</figcaption>
             </figure>
         </div>
-        <div>
+        <div class="img-video">
             <figure>
                 <picture>
-                    <source srcset="" type="img/mp4">
+                    <source srcset="" type="img/mp4" sizes="90vw">
                     <video src="./img/gif2.mp4" autoplay></video>
                 </picture>
                 <figcaption>Imagen sacada de Freepik</figcaption>
             </figure>
         </div>
-        <div>
+        <div class="img-video">
             <figure>
                 <picture>
-                    <source srcset="" type="img/webp">  
+                    <source srcset="" type="img/webp" sizes="90vw">  
                     <img src="./img/img1.webp" alt="Imagen 1">
                 </picture>
                 <figcaption>Imagen sacada de Freepik</figcaption>
             </figure>
         </div>
-        <div>
+        <div class="img-video">
             <figure>
                 <picture>
-                    <source srcset="" type="img/webp">
+                    <source srcset="" type="img/webp" sizes="90vw">
                     <img src="./img/img2.webp" alt="Imagen 2">
                 </picture>
                 <figcaption>Imagen sacada de Freepik</figcaption>
             </figure>
         </div>
-        <div>
+        <div class="img-video">
             <figure>
                 <picture>
-                    <source srcset="" type="img/webp">
+                    <source srcset="" type="img/webp" sizes="90vw">
                     <img src="./img/img3.webp" alt="Imagen 3">
                 </picture>
                 <figcaption>Imagen sacada de Freepik</figcaption>
             </figure>
         </div>
-        <div>
+        <div class="img-video">
             <figure>
                 <picture>
-                    <source srcset="" type="img/webp">
+                    <source srcset="" type="img/webp" sizes="90vw">
                     <img src="./img/img4.webp" alt="Imagen 4">
                 </picture>
                 <figcaption>Imagen sacada de Freepik</figcaption>
             </figure>
         </div>
-        <div>
+        <div class="img-video">
             <figure>
                 <picture>
-                    <source srcset="" type="img/webp">
+                    <source srcset="" type="img/webp" sizes="90vw">
                     <img src="./img/img5.webp" alt="Imagen 5">
                 </picture>
                 <figcaption>Imagen sacada de Freepik</figcaption>
             </figure>
         </div>
-        <div>
+        <div class="img-video">
             <figure>
                 <picture>
-                    <source srcset="" type="img/webp">
+                    <source srcset="" type="img/webp" sizes="90vw">
                     <img src="./img/img6.webp" alt="Imagen 6">
                 </picture>
                 <figcaption>Imagen sacada de Freepik</figcaption>
             </figure>
         </div>
-        <div>
+        <div class="img-video">
             <figure>
                 <picture>
-                    <source srcset="" type="img/webp">
+                    <source srcset="" type="img/webp" sizes="90vw">
                     <img src="./img/img7.webp" alt="Imagen 7">
                 </picture>
                 <figcaption>Imagen sacada de Freepik</figcaption>
             </figure>
         </div>
-        <div>
+        <div class="img-video">
             <figure>
                 <picture>
-                    <source srcset="" type="img/webp">
+                    <source srcset="" type="img/webp" sizes="90vw">
                 <img src="./img/img8.webp" alt="Imagen 8">
             </picture>
             <figcaption>Imagen sacada de Freepik</figcaption>
         </figure>
         </div>
-        <div>
+        <div class="img-video">
             <figure>
                 <picture>
-                    <source srcset="" type="img/webp">
+                    <source srcset="" type="img/webp" sizes="90vw">
                     <img src="./img/img9.webp" alt="Imagen 9">
                 </picture>
                 <figcaption>Imagen sacada de Freepik</figcaption>
             </figure>
         </div>
-        <div>
+        <div class="img-video">
             <figure>
                 <picture>
-                   <source srcset="" type="img/webp">
+                   <source srcset="" type="img/webp" sizes="90vw">
                     <img src="./img/img10.webp" alt="Imagen 10">
                 </picture>
                 <figcaption>Imagen sacada de Freepik</figcaption>
